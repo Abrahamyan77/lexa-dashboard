@@ -1,4 +1,10 @@
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
     .header__fluid--top {
         background-color: #7a6fbe;
 
@@ -7,6 +13,8 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
+            z-index: 1000;
 
             .header__logo-lexa {
                 display: flex;
@@ -45,6 +53,10 @@ header {
                         display: block;
                     }
                 }
+
+                .menu-toggle {
+                    display: flex;
+                }
             }
 
             .header__controls {
@@ -55,49 +67,16 @@ header {
                 flex: 1;
                 margin-left: 40px;
             }
-
             .header__actions {
                 display: flex;
                 align-items: center;
                 gap: 12px;
             }
-
-            // @media (max-width: 768px) {
-            //     .header__controls {
-            //         margin-left: 20px;
-            //         gap: 12px;
-
-            //         .search-bar {
-            //             min-width: 120px;
-
-            //             &__input {
-            //                 min-width: 80px;
-            //             }
-            //         }
-            //     }
-
-            //     .header__actions {
-            //         gap: 8px;
-            //     }
-            // }
-
-            // @media (max-width: 576px) {
-            //     .header__controls {
-            //         flex-direction: column;
-            //         align-items: stretch;
-            //         margin-left: 10px;
-
-            //         .search-bar {
-            //             min-width: unset;
-            //         }
-            //     }
-            // }
-
             @media (max-width: 380px) {
                 .header__logo-lexa {
-                   img{
-                    display: none !important;
-                   }
+                    img {
+                        display: none !important;
+                    }
                 }
             }
         }
