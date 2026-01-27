@@ -1,0 +1,127 @@
+.stat-card {
+    background: linear-gradient(135deg, #8b7ec8 0%, #7a6fbe 100%);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    &__title {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 0.8);
+        flex-shrink: 0;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__value {
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    &__change {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+
+        &--positive {
+            background-color: rgba(76, 175, 175, 0.2);
+            color: #4cafaf;
+        }
+
+        &--negative {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+
+        &--neutral {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 20px;
+        min-height: 130px;
+
+        &__value {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 16px;
+        min-height: 120px;
+
+        &__title {
+            font-size: 11px;
+        }
+
+        &__value {
+            font-size: 20px;
+        }
+
+        &__icon {
+            width: 36px;
+            height: 36px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
