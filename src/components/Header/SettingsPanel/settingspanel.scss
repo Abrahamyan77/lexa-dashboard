@@ -1,0 +1,195 @@
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: #2a2d3a;
+    z-index: 1007;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.3);
+
+    &--open {
+        transform: translateX(0);
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        animation: fadeIn 0.3s ease;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 12px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0;
+    }
+
+    &__close {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 24px;
+        cursor: pointer;
+        padding: 4px 8px;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
+    &__content {
+        padding: 20px;
+    }
+
+    &__group {
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__label {
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    &__options {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    &__option {
+        flex: 1;
+        min-width: 80px;
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        &--active {
+            background-color: #7a6fbe;
+            border-color: #7a6fbe;
+            color: #ffffff;
+        }
+
+        &--red {
+
+            background-color: #dee2e6;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            padding: 5px 5px;
+            color: #b1b1b4;
+
+            &.settings-panel__option--active {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        &--teal {
+            background-color: #dee2e6;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            padding: 5px 5px;
+            color: #b1b1b4;
+
+            &.settings-panel__option--active {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    &__layouts {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
+
+    &__layout-option {
+        aspect-ratio: 1;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        padding: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &__layout-preview {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .preview-item {
+            flex: 1;
+            background: linear-gradient(90deg, #7a6fbe, #6b5fa8);
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
