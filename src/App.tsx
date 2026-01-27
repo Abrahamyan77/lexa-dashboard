@@ -1,7 +1,13 @@
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
 function App() {
   return (
     <>
-      <div> lexa dashboard </div>
+      <Header />
+      <Dashboard />
+      <Footer />
     </>
   );
 }
