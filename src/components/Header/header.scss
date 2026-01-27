@@ -1,0 +1,105 @@
+header {
+    .header__fluid--top {
+        background-color: #7a6fbe;
+
+        .header__fluid {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .header__logo-lexa {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+
+                .logo__lexa {
+                    height: 19px;
+                }
+
+                .logo {
+                    height: 19px;
+                    display: none;
+                }
+
+                .menu {
+                    color: #ccc;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    display: none;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .header__logo-lexa {
+                    .logo__lexa {
+                        display: none;
+                    }
+
+                    .logo {
+                        display: block;
+                    }
+
+                    .menu {
+                        display: block;
+                    }
+                }
+            }
+
+            .header__controls {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 16px;
+                flex: 1;
+                margin-left: 40px;
+            }
+
+            .header__actions {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            // @media (max-width: 768px) {
+            //     .header__controls {
+            //         margin-left: 20px;
+            //         gap: 12px;
+
+            //         .search-bar {
+            //             min-width: 120px;
+
+            //             &__input {
+            //                 min-width: 80px;
+            //             }
+            //         }
+            //     }
+
+            //     .header__actions {
+            //         gap: 8px;
+            //     }
+            // }
+
+            // @media (max-width: 576px) {
+            //     .header__controls {
+            //         flex-direction: column;
+            //         align-items: stretch;
+            //         margin-left: 10px;
+
+            //         .search-bar {
+            //             min-width: unset;
+            //         }
+            //     }
+            // }
+
+            @media (max-width: 380px) {
+                .header__logo-lexa {
+                   img{
+                    display: none !important;
+                   }
+                }
+            }
+        }
+    }
+}
