@@ -1,6 +1,7 @@
 import "./headermain.scss";
 import Container from "../../Container/Container";
-import audio from "../../../assets/audio.jpg";
+import TinyBarChartLeft from "../../GraphLeft/GraphLeft";
+import TinyBarChartRight from "../../GraphRight/GraphRight";
 
 interface HeaderMainProps {
   title: string;
@@ -34,22 +35,14 @@ export default function HeaderMain({
             <div className="header-main__stat-card">
               <div className="header-main__stat-icon">{}</div>
               <div className="header-main__stat-value">
-                <img
-                  src={audio}
-                  alt={audio}
-                  className="header-main__stat-image"
-                />
+                <TinyBarChartLeft />
               </div>
               <div className="header-main__stat-label">Item Sold 1230</div>
             </div>
             <div className="header-main__stat-card">
               <div className="header-main__stat-icon">{}</div>
               <div className="header-main__stat-value">
-                <img
-                  src={audio}
-                  alt={audio}
-                  className="header-main__stat-image"
-                />
+                <TinyBarChartRight />
               </div>
               <div className="header-main__stat-label">Balance $ 2,317</div>
             </div>
