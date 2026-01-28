@@ -32,9 +32,15 @@
     &__text {
         font-weight: 500;
     }
+    &__text--light {
+        color: rgba(0, 0, 0, 0.8);
+    }
 
     &__icon {
         transition: transform 0.3s ease;
+    }
+    &__icon--light {
+        color: rgba(0, 0, 0, 0.8);
     }
 
     @media (max-width: 992px) {

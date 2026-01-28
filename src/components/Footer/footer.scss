@@ -6,6 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &__light{
+        background-color: #f8f9fa;
+        color: #495057;
+        box-shadow: 0 6px 20px rgba(2,8,23,0.45);
+
+    }
     p{
         .heart{
             width: 16px;

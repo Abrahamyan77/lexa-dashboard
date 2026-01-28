@@ -27,12 +27,22 @@ const defaultItems: NavItem[] = [
 
 interface HeaderNavProps {
   items?: NavItem[];
+  darkMode: boolean;
 }
 
-export default function HeaderNav({ items = defaultItems }: HeaderNavProps) {
+export default function HeaderNav({
+  items = defaultItems,
+  darkMode,
+}: HeaderNavProps) {
   return (
     <div className="haeder__wrapper">
-      <nav className="header-nav">
+      <nav
+        className={
+          darkMode
+            ? "header-nav header-nav--dark"
+            : "header-nav header-nav__light"
+        }
+      >
         <div className="header-nav__container">
           {items.map((item, index) => (
             <button
@@ -40,9 +50,25 @@ export default function HeaderNav({ items = defaultItems }: HeaderNavProps) {
               className={`header-nav__item ${item.active ? "header-nav__item--active" : ""}`}
             >
               {item.icon && (
-                <span className="header-nav__icon">{item.icon}</span>
+                <span
+                  className={
+                    darkMode
+                      ? "header-nav__icon dark"
+                      : "header-nav__icon header-nav__light"
+                  }
+                >
+                  {item.icon}
+                </span>
               )}
-              <span className="header-nav__label">{item.label}</span>
+              <span
+                className={
+                  darkMode
+                    ? "header-nav__label dark"
+                    : "header-nav__label header-nav__label-light"
+                }
+              >
+                {item.label}
+              </span>
             </button>
           ))}
         </div>

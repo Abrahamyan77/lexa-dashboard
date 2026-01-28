@@ -11,6 +11,10 @@
     padding: 18px;
     box-shadow: 0 6px 20px rgba(2,8,23,0.45);
     border: 1px solid rgba(255,255,255,0.02);
+    &__light {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
   }
 
   &__title {

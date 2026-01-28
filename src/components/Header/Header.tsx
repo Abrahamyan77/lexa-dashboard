@@ -1,6 +1,7 @@
 import Container from "../Container/Container";
 import "./header.scss";
 import logo_lexa from "../../assets/logo-lexa.png";
+import logo__lexa_light from "../../assets/logo-lexa-light.png";
 import logo from "../../assets/logo.png";
 import { TextAlignJustify } from "lucide-react";
 import SearchBar from "./SearchBar/SearchBar";
@@ -15,7 +16,12 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 import SettingsPanel from "./SettingsPanel/SettingsPanel";
 import { useState } from "react";
 
-export default function Header() {
+interface HeaderProps {
+  darkMode: boolean;
+  setDarkMode: (value: boolean) => void;
+}
+
+export default function Header({ darkMode, setDarkMode }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
 
@@ -29,11 +35,25 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header__fluid header__fluid--top">
+      <div
+        className={
+          darkMode
+            ? "header__fluid header__fluid--top"
+            : "header__fluid header__fluid--top header__fluid--light"
+        }
+      >
         <Container>
           <div className="header__fluid">
             <div className="header__logo-lexa">
-              <img src={logo_lexa} alt="Logo-lexa" className="logo__lexa" />
+              {darkMode ? (
+                <img src={logo_lexa} alt="Logo-lexa" className="logo__lexa" />
+              ) : (
+                <img
+                  src={logo__lexa_light}
+                  alt="Logo-lexa"
+                  className="logo__lexa"
+                />
+              )}
               <img src={logo} alt="Logo" className="logo" />
               <button
                 className="menu-toggle"
@@ -44,17 +64,17 @@ export default function Header() {
               </button>
             </div>
             <div className="header__controls">
-              <SearchBar />
+              <SearchBar darkMode={darkMode} />
               <div className="header__actions">
-                <LanguageSelector />
-                <Fullscreen />
-                <Notification />
+                <LanguageSelector darkMode={darkMode} />
+                <Fullscreen darkMode={darkMode} />
+                <Notification darkMode={darkMode} />
                 <UserAvatar />
                 <button
                   onClick={toggleSettingsPanel}
                   className="settings-toggle"
                 >
-                  <Setting />
+                  <Setting darkMode={darkMode} />
                 </button>
               </div>
             </div>
@@ -68,9 +88,11 @@ export default function Header() {
       <SettingsPanel
         isOpen={isSettingsPanelOpen}
         onClose={() => setIsSettingsPanelOpen(false)}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
       />
       <HeaderMain title="Dashboard" breadcrumbs={["Lexa", "Dashboard"]} />
-      <HeaderNav />
+      <HeaderNav darkMode={darkMode} />
     </header>
   );
 }

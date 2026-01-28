@@ -8,6 +8,21 @@
     gap: 8px;
     transition: all 0.3s ease;
     border-radius: 100px;
+    .search-bar__input--light{
+        color: rgba(0, 0, 0, 0.7);
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        &:focus {
+            color: rgba(0, 0, 0, 0.9);
+
+            &+.search-bar__icon {
+                color: rgba(0, 0, 0, 0.9);
+            }
+        }
+    }
 
     &__input {
         flex: 1;
@@ -41,9 +56,9 @@
         flex-shrink: 0;
         transition: color 0.3s ease;
         cursor: pointer;
-
-
-
+    }
+    &__icon--light{
+        color: rgba(0, 0, 0, 0.6);
     }
 
     &:hover {

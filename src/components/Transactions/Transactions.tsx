@@ -1,6 +1,6 @@
 import "./transactions.scss";
 
-export default function Transactions() {
+export default function Transactions({ darkMode }: { darkMode: boolean }) {
   const transactions = [
     {
       id: 1,
@@ -86,7 +86,13 @@ export default function Transactions() {
 
   return (
     <div className="transactions">
-      <div className="transactions__panel">
+      <div
+        className={
+          darkMode
+            ? "transactions__panel dark"
+            : "transactions__panel transactions__panel__light"
+        }
+      >
         <h3 className="transactions__title">Latest Transactions</h3>
         <div className="transactions__list">
           {transactions.map((t) => (
@@ -110,7 +116,13 @@ export default function Transactions() {
         </div>
       </div>
 
-      <div className="transactions__panel">
+      <div
+        className={
+          darkMode
+            ? "transactions__panel dark"
+            : "transactions__panel transactions__panel__light"
+        }
+      >
         <h3 className="transactions__title">Latest Orders</h3>
         <div className="transactions__list">
           {orders.map((o) => (
