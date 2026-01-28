@@ -6,19 +6,26 @@ import layout2 from "../../../assets/layout-2.jpg";
 interface SettingsPanelProps {
   isOpen: boolean;
   onClose: () => void;
+  darkMode: boolean;
+  setDarkMode: (value: boolean) => void;
 }
 
-export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
+export default function SettingsPanel({
+  isOpen,
+  onClose,
+  darkMode,
+  setDarkMode,
+}: SettingsPanelProps) {
   const [customColor, setCustomColor] = useState("default");
   const [layout, setLayout] = useState("vertical");
-  const [mode, setMode] = useState("dark");
   const [layoutWidth, setLayoutWidth] = useState("fluid");
-  const [topbarTheme, setTopbarTheme] = useState("light");
 
   return (
     <>
       {isOpen && <div className="settings-panel__overlay" onClick={onClose} />}
-      <div className={`settings-panel ${isOpen ? "settings-panel--open" : ""}`}>
+      <div
+        className={`settings-panel ${isOpen ? "settings-panel--open" : ""} ${!darkMode ? "settings-panel__light" : ""}`}
+      >
         <div className="settings-panel__header">
           <h2 className="settings-panel__title">Settings</h2>
           <button
@@ -80,14 +87,14 @@ export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
             <label className="settings-panel__label">Mode</label>
             <div className="settings-panel__options">
               <button
-                className={`settings-panel__option ${mode === "light" ? "settings-panel__option--active" : ""}`}
-                onClick={() => setMode("light")}
+                className={`settings-panel__option ${!darkMode ? "settings-panel__option--active" : ""}`}
+                onClick={() => setDarkMode(false)}
               >
                 Light
               </button>
               <button
-                className={`settings-panel__option ${mode === "dark" ? "settings-panel__option--active" : ""}`}
-                onClick={() => setMode("dark")}
+                className={`settings-panel__option ${darkMode ? "settings-panel__option--active" : ""}`}
+                onClick={() => setDarkMode(true)}
               >
                 Dark
               </button>
@@ -117,18 +124,8 @@ export default function SettingsPanel({ isOpen, onClose }: SettingsPanelProps) {
           <div className="settings-panel__group">
             <label className="settings-panel__label">Topbar Theme</label>
             <div className="settings-panel__options">
-              <button
-                className={`settings-panel__option ${topbarTheme === "light" ? "settings-panel__option--active" : ""}`}
-                onClick={() => setTopbarTheme("light")}
-              >
-                Light
-              </button>
-              <button
-                className={`settings-panel__option ${topbarTheme === "dark" ? "settings-panel__option--active" : ""}`}
-                onClick={() => setTopbarTheme("dark")}
-              >
-                Dark
-              </button>
+              <button className="settings-panel__option">Light</button>
+              <button className="settings-panel__option">Dark</button>
             </div>
           </div>
 

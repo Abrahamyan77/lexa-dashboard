@@ -1,7 +1,7 @@
 import { Maximize } from "lucide-react";
 import "./fullscreen.scss";
 
-export default function Fullscreen() {
+export default function Fullscreen({ darkMode }: { darkMode: boolean }) {
   const handleFullscreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -18,7 +18,7 @@ export default function Fullscreen() {
       onClick={handleFullscreen}
       title="Toggle fullscreen"
     >
-      <Maximize size={20} />
+      <Maximize size={20} className={darkMode ? "dark" : "light"} />
     </button>
   );
 }

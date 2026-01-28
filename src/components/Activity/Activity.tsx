@@ -1,6 +1,6 @@
 import "./activity.scss";
 
-export default function Activity() {
+export default function Activity({ darkMode }: { darkMode: boolean }) {
   const inboxItems = [
     {
       id: 1,
@@ -57,7 +57,13 @@ export default function Activity() {
   return (
     <div className="activity">
       {/* Inbox */}
-      <div className="activity__section activity__inbox">
+      <div
+        className={
+          darkMode
+            ? "activity__section activity__inbox dark"
+            : "activity__section activity__inbox activity__section__light"
+        }
+      >
         <h3 className="activity__title">Inbox</h3>
         <div className="activity__inbox-list">
           {inboxItems.map((item) => (
@@ -76,7 +82,13 @@ export default function Activity() {
       </div>
 
       {/* Recent Activity Feed */}
-      <div className="activity__section activity__feed">
+      <div
+        className={
+          darkMode
+            ? "activity__section activity__feed dark"
+            : "activity__section activity__feed activity__section__light"
+        }
+      >
         <div className="activity__tabs">
           <span className="activity__tab">Recent</span>
           <span className="activity__tab active">Activity</span>
@@ -96,9 +108,13 @@ export default function Activity() {
         <button className="activity__load-more">Load More</button>
       </div>
 
-      {/* Right Panel */}
-      <div className="activity__section activity__right-panel">
-        {/* Quote Card */}
+      <div
+        className={
+          darkMode
+            ? "activity__section activity__right-panel dark"
+            : "activity__section activity__right-panel activity__section__light"
+        }
+      >
         <div className="activity__quote-card">
           <p className="activity__quote-text">
             The European languages are members of the same family. Their

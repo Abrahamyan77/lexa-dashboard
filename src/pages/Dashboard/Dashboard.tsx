@@ -2,11 +2,11 @@ import "./dashboard.scss";
 import Container from "../../components/Container/Container";
 import StatCard from "../../components/StatCard/StatCard";
 import { Package, DollarSign, Tag, ShoppingBag } from "lucide-react";
-import StatMonthlyEarnings from "../../components/StatMonthlyEarnings/StatMonthlyEarnings";
 import Activity from "../../components/Activity/Activity";
 import Transactions from "../../components/Transactions/Transactions";
+import StateMonthlyEarnings from "../../components/StateMonthlyEarnings/StateMonthlyEarnings";
 
-export default function Dashboard() {
+export default function Dashboard({ darkMode }: { darkMode: boolean }) {
   const stats = [
     {
       title: "Orders",
@@ -35,7 +35,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="dashboard">
+    <div className={darkMode ? "dashboard dark" : "dashboard dashboard__light"}>
       <Container>
         <div className="dashboard__grid">
           {stats.map((stat, index) => (
@@ -48,10 +48,10 @@ export default function Dashboard() {
             />
           ))}
         </div>
-        <StatMonthlyEarnings />
+        <StateMonthlyEarnings darkMode={darkMode} />
 
-        <Activity />
-        <Transactions />
+        <Activity darkMode={darkMode} />
+        <Transactions darkMode={darkMode} />
       </Container>
     </div>
   );

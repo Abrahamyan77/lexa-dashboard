@@ -1,1 +1,126 @@
 @import "tailwindcss";
+
+/* @layer base {
+ 
+  :root {
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f9fafb;
+    --color-text: #1f2937;
+    --color-text-secondary: #6b7280;
+    --color-border: #e5e7eb;
+    --color-accent: #3b82f6;
+  }
+
+  html {
+    @apply bg-white text-gray-900;
+  }
+
+  body {
+    @apply bg-white text-gray-900 transition-all duration-300;
+  }
+
+
+  button {
+    @apply text-gray-900 transition-colors duration-200;
+  }
+
+  input, textarea, select {
+    @apply bg-white text-gray-900 border-gray-300 transition-colors duration-200;
+  }
+
+  .settings-panel {
+    @apply bg-white text-gray-900 border-gray-200;
+  }
+
+  header, nav, .header {
+    @apply bg-white text-gray-900;
+  }
+
+  .card, .container {
+    @apply bg-white text-gray-900;
+  }
+
+
+  .dark {
+    --color-bg: #0a0e27;
+    --color-bg-secondary: #12162f;
+    --color-text: #e0e6ff;
+    --color-text-secondary: #a0afd9;
+    --color-border: #1e2749;
+    --color-accent: #6366f1;
+    color-scheme: dark;
+  }
+
+  .dark body {
+    @apply bg-[#0a0e27] text-[#e0e6ff];
+  }
+
+  .dark button {
+    @apply text-[#e0e6ff] hover:bg-[#12162f];
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    @apply bg-[#12162f] text-[#e0e6ff] border-[#1e2749];
+  }
+
+  .dark .settings-panel {
+    @apply bg-[#12162f] text-[#e0e6ff] border-[#1e2749];
+  }
+
+  .dark header,
+  .dark nav,
+  .dark .header {
+    @apply bg-[#12162f] text-[#e0e6ff];
+  }
+
+  .dark .card,
+  .dark .container {
+    @apply bg-[#12162f] text-[#e0e6ff];
+  }
+}
+
+ */
+::-webkit-scrollbar {
+    width: 26px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e2749;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6366f1;
+    border-radius: 16px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #818cf8;
+}
+
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+}
+
+html.dark {
+    scrollbar-color: #424242 #272727;
+}
+

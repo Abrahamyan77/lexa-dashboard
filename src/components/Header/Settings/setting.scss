@@ -10,6 +10,9 @@
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: all 0.3s ease;
+    .light{
+        color: rgba(0, 0, 0, 0.7);
+    }
 
     svg {
         animation: infiniteRotate 3s linear infinite;

@@ -4,7 +4,10 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-
+   .header__fluid--light{
+        background-color: #ffffff !important;
+        
+    }
     .header__fluid--top {
         background-color: #7a6fbe;
 
@@ -82,3 +85,5 @@ header {
         }
     }
 }
+
+ 
