@@ -1,0 +1,70 @@
+.stat-monthly-earnings {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 24px;
+    z-index: -1000;
+
+    &__item {
+        background-color: #252836;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        &--amount {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        &--change {
+            margin: 0;
+            font-size: 13px;
+            color: #999;
+
+            &.positive {
+                color: #66bb6a;
+            }
+
+            &.negative {
+                color: #ef5350;
+            }
+        }
+
+        &--label {
+            margin: 0;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
