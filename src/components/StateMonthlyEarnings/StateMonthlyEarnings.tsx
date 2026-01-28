@@ -17,18 +17,27 @@ export default function StateMonthlyEarnings({
             : "stat-monthly-earnings__item stat-monthly-earnings__item__light"
         }
       >
-        <div>
+        <div className="monlhley">
           <h3>Monthly Earnings</h3>
-          <p className="stat-monthly-earnings__item--amount">$24,895</p>
-          <p className="stat-monthly-earnings__item--change positive">
-            +2.65% since last week
-          </p>
+          <div className="monlhley__flex">
+            <div>
+              <p className="stat-monthly-earnings__item--amount">$24,895</p>
+              <p className="stat-monthly-earnings__item--change ">
+                {" "}
+                Marketplace
+              </p>
+            </div>
+            <div>
+              <p className="stat-monthly-earnings__item--amount">$23651</p>
+              <p className="stat-monthly-earnings__item--change ">
+                {" "}
+                Total Income
+              </p>
+            </div>
+          </div>
         </div>
+
         <CustomActiveShapePieChart />
-        <div>
-          <p className="stat-monthly-earnings__item--label">This Month</p>
-          <p className="stat-monthly-earnings__item--amount">$8,500</p>
-        </div>
       </div>
       <div
         className={

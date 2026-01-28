@@ -47,7 +47,7 @@ const StackedBarChart = () => {
             <p
               style={{
                 margin: "8px 0 0 0",
-                fontSize: "28px",
+                fontSize: "18px",
                 fontWeight: "700",
                 color: "#fff",
               }}
@@ -62,7 +62,7 @@ const StackedBarChart = () => {
             <p
               style={{
                 margin: "8px 0 0 0",
-                fontSize: "28px",
+                fontSize: "18px",
                 fontWeight: "700",
                 color: "#fff",
               }}
