@@ -1,4 +1,5 @@
 import {
+  Cell,
   Legend,
   Pie,
   PieChart,
@@ -9,10 +10,12 @@ import {
 import { RechartsDevtools } from "@recharts/devtools";
 
 const data = [
-  { name: "Download Sales", value: 400 },
-  { name: "In-Store Sales", value: 300 },
+  { name: "Download Sales", value: 300 },
+  { name: "In-Store Sales", value: 100 },
   { name: "Mail-Order Sales", value: 300 },
 ];
+
+const COLORS = ["#42ffc6", "#ffffff", "#6366f1"];
 
 type ActiveShapeProps = {
   cx?: number;
@@ -27,8 +30,6 @@ type ActiveShapeProps = {
   percent?: number;
   value?: number;
 };
-
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658"];
 
 const renderActiveShape = (props: ActiveShapeProps) => {
   const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } =
@@ -51,11 +52,11 @@ const renderCustomLabel = () => {
   return (
     <text
       x="50%"
-      y="50%"
+      y="40%"
       textAnchor="middle"
       dominantBaseline="central"
       fill="#666"
-      fontSize="14"
+      fontSize="18պղ"
     >
       In-Store Sales 30
     </text>
@@ -71,7 +72,7 @@ export default function CustomActiveShapePieChart({
     <div
       style={{
         width: "100%",
-        height: "400px",
+        height: "290px",
         display: "flex",
         justifyContent: "center",
       }}
@@ -87,16 +88,11 @@ export default function CustomActiveShapePieChart({
             label={renderCustomLabel}
             innerRadius={60}
             outerRadius={100}
-            fill="#8884d8"
             dataKey="value"
             isAnimationActive={isAnimationActive}
           >
-            {data.map((entry, index) => (
-              <Pie
-                key={`cell-${index}`}
-                dataKey="value"
-                fill={COLORS[index % COLORS.length]}
-              />
+            {data.map((_, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index]} />
             ))}
           </Pie>
           <Tooltip />

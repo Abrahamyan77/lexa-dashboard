@@ -12,6 +12,15 @@
         &__light {
             background-color: #ffffff;
         }
+        .monlhley{
+           width: 100%;
+           &__flex{
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              gap: 5px;
+           }
+        }
 
         &:first-child {
             display: flex;
@@ -29,7 +38,7 @@
 
         &--amount {
             margin: 0;
-            font-size: 32px;
+            font-size: 20px;
             font-weight: 700;
             color: #fff;
         }
@@ -38,14 +47,6 @@
             margin: 0;
             font-size: 13px;
             color: #999;
-
-            &.positive {
-                color: #66bb6a;
-            }
-
-            &.negative {
-                color: #ef5350;
-            }
         }
 
         &--label {
