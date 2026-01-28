@@ -1,0 +1,17 @@
+.footer{
+    background-color: #323a4e;
+    text-align: center;
+    padding: 20px;
+    color: #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+        .heart{
+            width: 16px;
+            height: 16px;
+            margin: 0 4px;
+            display: inline-block;
+        }
+    }
+}

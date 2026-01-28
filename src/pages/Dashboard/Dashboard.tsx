@@ -2,6 +2,9 @@ import "./dashboard.scss";
 import Container from "../../components/Container/Container";
 import StatCard from "../../components/StatCard/StatCard";
 import { Package, DollarSign, Tag, ShoppingBag } from "lucide-react";
+import StatMonthlyEarnings from "../../components/StatMonthlyEarnings/StatMonthlyEarnings";
+import Activity from "../../components/Activity/Activity";
+import Transactions from "../../components/Transactions/Transactions";
 
 export default function Dashboard() {
   const stats = [
@@ -45,6 +48,10 @@ export default function Dashboard() {
             />
           ))}
         </div>
+        <StatMonthlyEarnings />
+
+        <Activity />
+        <Transactions />
       </Container>
     </div>
   );

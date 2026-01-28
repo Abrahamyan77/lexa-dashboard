@@ -1,0 +1,326 @@
+.activity {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+
+    &__section {
+        background-color: #252836;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+        font-size: 16px;
+        color: #999;
+        font-weight: 500;
+    }
+
+    // Inbox Section
+    &__inbox-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__inbox-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #3a3f52;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+
+    &__inbox-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__inbox-name {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    &__inbox-message {
+        margin: 4px 0 0 0;
+        font-size: 12px;
+        color: #999;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__inbox-time {
+        margin: 0;
+        font-size: 12px;
+        color: #999;
+        flex-shrink: 0;
+    }
+
+    // Activity Feed Section
+    &__tabs {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #3a3f52;
+    }
+
+    &__tab {
+        padding-bottom: 12px;
+        font-size: 13px;
+        color: #999;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+
+        &.active {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &__feed-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    &__feed-item {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__feed-icon {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #667eea;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
+    &__feed-content {
+        flex: 1;
+    }
+
+    &__feed-date {
+        margin: 0;
+        font-size: 12px;
+        color: #667eea;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__feed-action {
+        margin: 4px 0 0 0;
+        font-size: 13px;
+        color: #ccc;
+    }
+
+    &__load-more {
+        width: 100%;
+        padding: 8px 16px;
+        background-color: #667eea;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #764ba2;
+        }
+    }
+
+    // Right Panel
+    &__right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__quote-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 8px;
+        padding: 20px;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__quote-text {
+        margin: 0;
+        font-size: 13px;
+        color: #fff;
+        line-height: 1.6;
+        text-align: center;
+        font-style: italic;
+    }
+
+    &__user-card {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    &__user-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    &__user-info {
+        flex: 1;
+    }
+
+    &__user-name {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    &__user-role {
+        margin: 4px 0 0 0;
+        font-size: 12px;
+        color: #999;
+    }
+
+    &__sales-card {
+        border-top: 1px solid #3a3f52;
+        padding-top: 20px;
+    }
+
+    &__sales-title {
+        margin: 0 0 12px 0;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    &__sales-amount {
+        margin: 0;
+        font-size: 28px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    &__sales-description {
+        margin: 8px 0 0 0;
+        font-size: 12px;
+        color: #999;
+    }
+
+    &__sales-link {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 12px;
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #764ba2;
+        }
+    }
+
+    &__sales-chart {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+        align-items: flex-end;
+        height: 80px;
+    }
+
+    &__bar {
+        flex: 1;
+        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        border-radius: 4px;
+        min-height: 20px;
+    }
+
+    // Responsive
+    @media (max-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+
+        &__right-panel {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        &__quote-card {
+            grid-column: 1 / 2;
+        }
+
+        &__user-card {
+            grid-column: 2 / 3;
+        }
+
+        &__sales-card {
+            grid-column: 3 / 4;
+            border-top: none;
+            padding-top: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+
+        &__right-panel {
+            grid-template-columns: 1fr;
+            grid-column: 1 / -1;
+        }
+
+        &__quote-card {
+            grid-column: auto;
+        }
+
+        &__user-card {
+            grid-column: auto;
+        }
+
+        &__sales-card {
+            grid-column: auto;
+        }
+    }
+}
